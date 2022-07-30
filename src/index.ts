@@ -6,7 +6,7 @@ let medium = 2
 let large = 3
 
 // PascalCase
-enum Size {
+const enum Size {
 	Small = 1,
 	Medium,
 	Large,
