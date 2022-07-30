@@ -1,11 +1,7 @@
 "use strict";
 console.log('Typescript Master!');
-let num = 123324876;
-let myName = 'Shubham';
-let isMarried = false;
-console.log(isMarried);
-let levels;
-function print(documents) {
-    console.log(documents);
-}
+let student = [1900268, 'Shubham'];
+console.log(student);
+student[0].toString();
+console.log(student[1].charAt(2));
 //# sourceMappingURL=index.js.map

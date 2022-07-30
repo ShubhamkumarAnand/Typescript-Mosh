@@ -1,5 +1,8 @@
 console.log('Typescript Master!')
 
-let numbers: number[] = [1, 4, 2]
-numbers.forEach((n) => n.toString())
-console.log(numbers)
+// tuples = [1900268, 'Shubham']
+let student: [number, string] = [1900268, 'Shubham']
+console.log(student)
+
+student[0].toString()
+console.log(student[1].charAt(2))
