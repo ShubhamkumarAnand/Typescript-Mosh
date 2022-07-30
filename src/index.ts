@@ -1,23 +1,9 @@
-console.log('Typescript Master!')
+// Properly annotate the variables and their return types
 
-// enums -
-// let small = 1
-// let medium = 2
-// let large = 3
-
-// PascalCase
-
-/*
-  Making the enum constant make the js file more precise
-*/
-const enum Size {
-	Small = 1, // Default is 0
-	Medium, // Also string as well as all data type can be assigned
-	Large,
+function calculateTax(income: number, taxYear = 2022): number {
+	if (income < 50_000 && taxYear < 2018) return income * 0.3
+	return income * 0.4
 }
 
-let mySize: Size = Size.Medium
-console.log(mySize)
-
-let myBrotherSize: Size = Size.Small
-console.log(myBrotherSize)
+console.log(calculateTax(45_000, 2017))
+console.log(calculateTax(55_000, 2017))
