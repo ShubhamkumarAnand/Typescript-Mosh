@@ -1,9 +1,11 @@
 "use strict";
-console.log('Hi Maa!');
-let myAge = 21;
-if (myAge > 18) {
-    console.log('Ready to Drink & Drive!');
-    myAge += 1;
+console.log('Typescript Master!');
+let num = 123324876;
+let myName = 'Shubham';
+let isMarried = false;
+console.log(isMarried);
+let levels;
+function print(documents) {
+    console.log(documents);
 }
-console.log(myAge);
 //# sourceMappingURL=index.js.map

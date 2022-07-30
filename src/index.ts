@@ -1,7 +1,12 @@
-console.log('Hi Maa!')
-let myAge: number = 21
-if (myAge > 18) {
-	console.log('Ready to Drink & Drive!')
-	myAge += 1
+console.log('Typescript Master!')
+
+let num: number = 123_324_876
+let myName: string = 'Shubham'
+let isMarried = false
+console.log(isMarried)
+
+let levels
+
+function print(documents: any) {
+	console.log(documents)
 }
-console.log(myAge)
