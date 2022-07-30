@@ -14,3 +14,6 @@ const enum Size {
 
 let mySize: Size = Size.Medium
 console.log(mySize)
+
+let myBrotherSize: Size = Size.Small
+console.log(myBrotherSize)
