@@ -9,3 +9,5 @@ student.push(2)
 
 student[0].toString()
 console.log(student[1].charAt(2))
+
+// tuples are useful only for key value pairs
