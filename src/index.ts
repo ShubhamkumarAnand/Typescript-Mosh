@@ -1,13 +1,16 @@
 console.log('Typescript Master!')
 
-// tuples = [1900268, 'Shubham']
-let student: [number, string] = [1900268, 'Shubham']
-console.log(student)
+// enums
+let small = 1
+let medium = 2
+let large = 3
 
-// Problem in tuples with Typescript
-student.push(2)
+// PascalCase
+enum Size {
+	Small = 1,
+	Medium,
+	Large,
+}
 
-student[0].toString()
-console.log(student[1].charAt(2))
-
-// tuples are useful only for key value pairs
+let mySize: Size = Size.Medium
+console.log(mySize)
