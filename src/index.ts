@@ -1,10 +1,18 @@
-// Union Type in Typescript
+// Intersection in Typescript an element which is of two type at the same time and can exhibits the both property
 
-function cmToInch(length: number | string): number {
-	// Narrowing
-	if (typeof length === 'number') return length / 1.54
-	else return parseFloat(length) * 1.54
+// let weight: number & string
+
+type Draggable = {
+	drag: () => void
 }
 
-console.log(cmToInch(64.5))
-console.log(cmToInch('178cm'))
+type Resizable = {
+	resize: () => void
+}
+
+type UiWidget = Draggable & Resizable
+
+let textBox: UiWidget = {
+	drag: () => {},
+	resize: () => {},
+}
