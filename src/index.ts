@@ -1,15 +1,8 @@
-// Nullish coalescing operator
+// Type Assertions - when you know the type of the value returned by the variable
 
-/*
-  Falsy value in JavaScript : (false, null, undefined, 0, '')
-*/
+let phone = document.getElementById('phone') as HTMLInputElement
 
-let speed: number | null = null
-let ride = {
-	// speed: speed || 40
-	// * Here if speed is given 0 it will be ignored and 40 will be taken as the value of the speed parameter
-	speed: speed ?? 40,
-	// * Only the null or undefined value is checked this is equivalent to (speed!==null ? speed:40)
-}
+let myName = <HTMLInputElement>document.getElementById('myName')
 
-console.log(ride.speed)
+console.log(phone.value)
+console.log(myName.value)
