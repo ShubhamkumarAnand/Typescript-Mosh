@@ -1,8 +1,18 @@
-// Type Assertions - when you know the type of the value returned by the variable
+function render(document: any)
+{
+  document.run()
+  document.write()
+  document.whateverWeWantToRender()
+}
 
-let phone = document.getElementById('phone') as HTMLInputElement
+// unknown Type in TypeScript
+function voiceChange(document: unknown)
+{
+  // Narrowing
+  if (type document === 'string')
+    return document.toString()
+  document.explain()
+  document.wellWritten()
+}
 
-let myName = <HTMLInputElement>document.getElementById('myName')
-
-console.log(phone.value)
-console.log(myName.value)
+// It is preferred to use unknown type over any type because it forces us to type check for the value
