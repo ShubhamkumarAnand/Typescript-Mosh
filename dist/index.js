@@ -1,12 +1,3 @@
 "use strict";
-function reject(message) {
-    throw new Error(message);
-}
-function updateScore() {
-    while (true) {
-    }
-}
-reject('...');
-updateScore();
-console.log('Hello world!');
+let pet;
 //# sourceMappingURL=index.js.map

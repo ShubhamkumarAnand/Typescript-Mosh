@@ -1,15 +1,18 @@
-//Never tells the compiler that the code after this function call will never be executed
-
-function reject(message: string): never {
-	throw new Error(message)
+// Exercises
+type Users = {
+	name: string
+	age: number
+	occupation?: string
 }
 
-function updateScore(): never {
-	// This function will never return and bound the infinite loop
-	while (true) {
-		// Read the Score
-	}
+type Bird = {
+	fly: () => void
 }
-reject('...')
-updateScore()
-console.log('Hello world!')
+
+type Fish = {
+	swim: () => void
+}
+
+let pet: Bird | Fish
+
+type DayOfWeek = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday'
