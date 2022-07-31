@@ -1,10 +1,10 @@
 "use strict";
-let employee = {
-    id: 1900268,
-    eName: 'Snow White',
-    joinedDate: (date) => {
-        console.log(new Date(date.getTime()));
-    },
-};
-console.log(employee);
+function cmToInch(length) {
+    if (typeof length === 'number')
+        return length / 1.54;
+    else
+        return parseFloat(length) * 1.54;
+}
+console.log(cmToInch(64.5));
+console.log(cmToInch('178cm'));
 //# sourceMappingURL=index.js.map

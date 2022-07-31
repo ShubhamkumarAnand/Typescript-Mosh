@@ -1,17 +1,10 @@
-// Type Aliases uses the PascalCase naming convention
+// Union Type in Typescript
 
-type Employee = {
-	readonly id: number
-	eName: string
-	joinedDate: (date: Date) => void
+function cmToInch(length: number | string): number {
+	// Narrowing
+	if (typeof length === 'number') return length / 1.54
+	else return parseFloat(length) * 1.54
 }
 
-let employee: Employee = {
-	id: 1_900_268,
-	eName: 'Snow White',
-	joinedDate: (date: Date) => {
-		console.log(new Date(date.getTime()))
-	},
-}
-
-console.log(employee)
+console.log(cmToInch(64.5))
+console.log(cmToInch('178cm'))
