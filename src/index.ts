@@ -1,8 +1,8 @@
-// Literals - (exact , Specific)
-// Once Specified we cannot assign another value to this variable
+// Nullable values are not allowed in typescript by default
 
-type Quantity = 50 | 100
-let value: Quantity = 100
+function greet(message: string | null | undefined) {
+	if (message) console.log(message)
+	else console.log('🙏🏻')
+}
 
-type Metric = 'cm' | 'inch'
-let measure: Metric = 'cm'
+greet(null)

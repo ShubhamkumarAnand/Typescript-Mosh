@@ -1,4 +1,9 @@
 "use strict";
-let value = 100;
-let measure = 'cm';
+function greet(message) {
+    if (message)
+        console.log(message);
+    else
+        console.log('🙏🏻');
+}
+greet(null);
 //# sourceMappingURL=index.js.map
