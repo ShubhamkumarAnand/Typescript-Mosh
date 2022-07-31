@@ -1,18 +1,14 @@
-function render(document: any)
-{
-  document.run()
-  document.write()
-  document.whateverWeWantToRender()
+//Never tells the compiler that the code after this function call will never be executed
+
+function reject(message: string): never {
+	throw new Error(message)
 }
 
-// unknown Type in TypeScript
-function voiceChange(document: unknown)
-{
-  // Narrowing
-  if (type document === 'string')
-    return document.toString()
-  document.explain()
-  document.wellWritten()
+function updateScore(): never {
+	while (true) {
+		// Read the Score
+	}
 }
-
-// It is preferred to use unknown type over any type because it forces us to type check for the value
+reject('...')
+updateScore()
+console.log('Hello world!')
