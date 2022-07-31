@@ -5,6 +5,7 @@ function reject(message: string): never {
 }
 
 function updateScore(): never {
+	// This function will never return and bound the infinite loop
 	while (true) {
 		// Read the Score
 	}
