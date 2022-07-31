@@ -1,18 +1,8 @@
-// Intersection in Typescript an element which is of two type at the same time and can exhibits the both property
+// Literals - (exact , Specific)
+// Once Specified we cannot assign another value to this variable
 
-// let weight: number & string
+type Quantity = 50 | 100
+let value: Quantity = 100
 
-type Draggable = {
-	drag: () => void
-}
-
-type Resizable = {
-	resize: () => void
-}
-
-type UiWidget = Draggable & Resizable
-
-let textBox: UiWidget = {
-	drag: () => {},
-	resize: () => {},
-}
+type Metric = 'cm' | 'inch'
+let measure: Metric = 'cm'
