@@ -1,24 +1,15 @@
-// Optional Chaining
+// Nullish coalescing operator
 
-type Customer = {
-	birthday?: Date
+/*
+  Falsy value in JavaScript : (false, null, undefined, 0, '')
+*/
+
+let speed: number | null = null
+let ride = {
+	// speed: speed || 40
+	// * Here if speed is given 0 it will be ignored and 40 will be taken as the value of the speed parameter
+	speed: speed ?? 40,
+	// * Only the null or undefined value is checked this is equivalent to (speed!==null ? speed:40)
 }
 
-function getCustomer(id: number): Customer | null | undefined {
-	return id === 0 ? null : { birthday: new Date() }
-}
-
-let customer = getCustomer(1)
-
-// Optional property access operator
-console.log(customer?.birthday?.getFullYear())
-
-// Optional element access operator
-// if(customer[0]!==null && customer[0]!==undefined)
-//     customer[0]
-
-// customer?.[0]
-
-// Optional call access operator
-let log: any = null
-log?.('a')
+console.log(ride.speed)
