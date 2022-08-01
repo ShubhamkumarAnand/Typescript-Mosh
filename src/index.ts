@@ -18,3 +18,12 @@ class Account {
       this.balance += amount
 	}
 }
+
+let account = new Account(1, 'Shubham', 0)
+console.log(account)
+console.log(typeof account)
+console.log(account instanceof Account);
+
+
+account.deposit(100)
+console.log(account.balance);
