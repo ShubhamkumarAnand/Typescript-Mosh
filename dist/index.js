@@ -1,17 +1,19 @@
 "use strict";
 class Ride {
-    activeRides = 0;
+    static _activeRides = 0;
     start() {
-        this.activeRides++;
+        Ride._activeRides++;
     }
     stop() {
-        this.activeRides--;
+        Ride._activeRides--;
+    }
+    static get activeRides() {
+        return Ride._activeRides;
     }
 }
 let ride1 = new Ride();
 ride1.start();
-console.log(ride1.activeRides);
 let ride2 = new Ride();
 ride2.start();
-console.log(ride2.activeRides);
+console.log(Ride.activeRides);
 //# sourceMappingURL=index.js.map
