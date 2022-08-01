@@ -1,9 +1,17 @@
 "use strict";
-class seatArrangements {
+class Ride {
+    activeRides = 0;
+    start() {
+        this.activeRides++;
+    }
+    stop() {
+        this.activeRides--;
+    }
 }
-let seat = new seatArrangements();
-seat.A1 = 'imskanand';
-seat['A2'] = 'Mosh';
-console.log(seat.A1);
-console.log(seat.A2);
+let ride1 = new Ride();
+ride1.start();
+console.log(ride1.activeRides);
+let ride2 = new Ride();
+ride2.start();
+console.log(ride2.activeRides);
 //# sourceMappingURL=index.js.map

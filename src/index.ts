@@ -1,15 +1,20 @@
-// Index Signatures
+// Static Members
 
-class seatArrangements {
-	// A1,A2,A3,A4...
-	// Mosh, Jha, Spa,Her...
-	// Index Signature property
-	[seatNumber: string]: string
+// A Static property is the property which belongs to the class not the object itself
+class Ride {
+	activeRides: number = 0
+	start() {
+		this.activeRides++
+	}
+	stop() {
+		this.activeRides--
+	}
 }
 
-let seat = new seatArrangements()
-seat.A1 = 'imskanand'
-seat['A2'] = 'Mosh'
+let ride1 = new Ride()
+ride1.start()
+console.log(ride1.activeRides)
 
-console.log(seat.A1)
-console.log(seat.A2)
+let ride2 = new Ride()
+ride2.start()
+console.log(ride2.activeRides)
