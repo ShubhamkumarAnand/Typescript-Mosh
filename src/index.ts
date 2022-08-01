@@ -1,8 +1,20 @@
-// Object Oriented Programming in typescript
+// Object Oriented programming
 
-/*
-  - The typescript follows the OOPs as well as the Functional Programming
-  - The OOPs follows the principal of all the code can be treated as object which work together and object interactions happens to complete the tasks
-  - The Object contains the state/Attributes and Behavior/Methods
-  - Object Person can have attributes -> name, email and Behavior -> talk(), sing(), dance()
-*/
+class Account {
+	id: number
+	owner: string
+	balance: number
+
+	constructor(id: number, owner: string, balance: number) {
+		this.id = id
+		this.owner = owner
+		this.balance = balance
+	}
+
+	deposit(amount: number): void {
+    if (amount <= 0)
+      throw new Error('Amount must be greater than zero')
+    else
+      this.balance += amount
+	}
+}
