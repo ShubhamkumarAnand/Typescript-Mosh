@@ -3,6 +3,7 @@ class Account {
     id;
     owner;
     balance;
+    nickname;
     constructor(id, owner, balance) {
         this.id = id;
         this.owner = owner;
