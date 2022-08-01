@@ -1,20 +1,14 @@
 // Object Oriented programming
 
 class Account {
-	readonly id: number
-	owner: string
-	private _balance: number
 	nickname?: string
 
-	constructor(id: number, owner: string, balance: number) {
-		this.id = id
-		this.owner = owner
-		this._balance = balance
-  }
-
-  private calculateTax() {
-
-  }
+  constructor(
+    public readonly id: number,
+    public owner: string,
+    private _balance: number) {
+      
+    }
 
 	deposit(amount: number): void {
 		if (amount <= 0) throw new Error('Amount must be greater than zero')
@@ -33,4 +27,4 @@ console.log(typeof account)
 console.log(account instanceof Account)
 
 account.deposit(100)
-console.log(account.getBalance());
+console.log(account.getBalance())
