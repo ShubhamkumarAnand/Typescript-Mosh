@@ -1,28 +1,27 @@
-// Static Members
+// OOPs - Inheritance
 
-// A Static property is the property which belongs to the class not the object itself
-// A Static property has only one memory space in the computer which is on the class.
-class Ride {
-	private static _activeRides: number = 0
-	start() {
-		Ride._activeRides++
+class Person {
+	constructor(public firstName: string, public lastName: string, public email: string) {}
+
+	get fullName() {
+		return this.firstName + ' ' + this.lastName
 	}
-	stop() {
-		Ride._activeRides--
-	}
-	// Only to prevent it to set it from outside
-	static get activeRides() {
-		return Ride._activeRides
+
+	walk() {
+		console.log('Walking')
 	}
 }
 
-// Property '_activeRides' is private and only accessible within class 'Ride'.
-// Ride._activeRides = 10
+class Student extends Person {
+	constructor(public studentId: number, firstName: string, lastName: string, email: string) {
+		super(firstName, lastName, email)
+	}
 
-let ride1 = new Ride()
-ride1.start()
+	talking() {
+		console.log('Now Talking')
+	}
+}
 
-let ride2 = new Ride()
-ride2.start()
-
-console.log(Ride.activeRides)
+let student = new Student(1, 'Shubham', 'Anand', 'imskanand@gmail.com')
+console.log(student.fullName)
+console.log(student.walk(), student.talking())
