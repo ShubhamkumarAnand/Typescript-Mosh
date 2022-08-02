@@ -1,27 +1,34 @@
-// Interfaces -> Let us to define the shape of the object.
+// Exercises
 
-// abstract class Calender {
-// 	constructor(public name: string) {}
-// 	abstract addEvent(): void
-// 	abstract removeEvent(): void
-// }
+class Logger {
+	constructor(public fileName: string) {}
 
-interface Calender {
+	write(message: string) {
+		console.log(message)
+	}
+}
+
+class Person {
+	constructor(public firstName: string, public lastName: string) {}
+
+	get fullName() {
+		return this.firstName + ' ' + this.lastName
+	}
+}
+
+class Employee extends Person {
+	constructor(public salary: number, firstName: string, lastName: string) {
+		super(firstName, lastName)
+	}
+}
+interface Address {
+	street: string
+	city: string
+	zipcode: number
+}
+
+interface Employees {
 	name: string
-	addEvent(): void
-	removeEvent(): void
-}
-
-interface CloudCalendar {
-	sync(): void
-}
-
-class GoogleCalendar implements Calender {
-	constructor(public name: string) {}
-	addEvent(): void {
-		throw new Error('Method not implemented.')
-	}
-	removeEvent(): void {
-		throw new Error('Method not implemented.')
-	}
+	salary: number
+	address: Address
 }
