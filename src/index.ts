@@ -1,27 +1,27 @@
-// Abstract Classes and Methods - A class which is not ready to be used so it will be implemented.
+// Interfaces -> Let us to define the shape of the object.
 
-abstract class Shape {
-	constructor(public color: string) {}
+// abstract class Calender {
+// 	constructor(public name: string) {}
+// 	abstract addEvent(): void
+// 	abstract removeEvent(): void
+// }
 
-	// Abstract Methods - A method which is not ready to be implemented so other methods will override this.
-	// Abstract Methods - Only available inside abstract class.
-	abstract render(): void
+interface Calender {
+	name: string
+	addEvent(): void
+	removeEvent(): void
 }
 
-class Circle extends Shape {
-	constructor(public radius: number, color: string) {
-		super(color)
-	}
-	override render(): void {
-		console.log('rendering the circle shape')
-	}
+interface CloudCalendar {
+	sync(): void
 }
 
-/*
-* This doesn't mean anything at all. so to stop the rendering of the class shape we created it as an abstract class.
-let shape = new Shape('red')
-shape.render()
-*/
-
-let circle = new Circle(12, 'blue')
-circle.render()
+class GoogleCalendar implements Calender {
+	constructor(public name: string) {}
+	addEvent(): void {
+		throw new Error('Method not implemented.')
+	}
+	removeEvent(): void {
+		throw new Error('Method not implemented.')
+	}
+}
