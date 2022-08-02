@@ -2,11 +2,9 @@
 class Person {
     firstName;
     lastName;
-    email;
-    constructor(firstName, lastName, email) {
+    constructor(firstName, lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
     }
     get fullName() {
         return this.firstName + ' ' + this.lastName;
@@ -17,22 +15,32 @@ class Person {
 }
 class Student extends Person {
     studentId;
-    constructor(studentId, firstName, lastName, email) {
-        super(firstName, lastName, email);
+    constructor(studentId, firstName, lastName) {
+        super(firstName, lastName);
         this.studentId = studentId;
     }
     talking() {
         console.log('Now Talking');
     }
 }
-let student = new Student(1, 'Shubham', 'Anand', 'imskanand@gmail.com');
-console.log(student.fullName);
-console.log(student.walk(), student.talking());
 class Teacher extends Person {
     get fullName() {
         return 'Prof. ' + super.fullName;
     }
 }
-let teacher = new Teacher('Mosh', 'li', 'abc@agc.com');
-console.log(teacher.fullName);
+class Principal extends Person {
+    get fullName() {
+        return 'Principal ' + super.fullName;
+    }
+}
+printName([
+    new Student(1, 'Mosh', 'li'),
+    new Teacher('Mosh', 'li'),
+    new Principal('Shubham', 'Anand'),
+]);
+function printName(people) {
+    for (let person of people) {
+        console.log(person.fullName);
+    }
+}
 //# sourceMappingURL=index.js.map
