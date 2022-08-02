@@ -1,54 +1,27 @@
-// ^ Private vs Protected Methods
-// * Both are same but only to say -> Protected Methods are inherited
+// Abstract Classes and Methods - A class which is not ready to be used so it will be implemented.
 
-class Person {
-	constructor(public firstName: string, public lastName: string) {}
+abstract class Shape {
+	constructor(public color: string) {}
 
-	get fullName() {
-		return this.firstName + ' ' + this.lastName
+	// Abstract Methods - A method which is not ready to be implemented so other methods will override this.
+	// Abstract Methods - Only available inside abstract class.
+	abstract render(): void
+}
+
+class Circle extends Shape {
+	constructor(public radius: number, color: string) {
+		super(color)
 	}
-
-	/*
-  private sing() {
-		console.log('can sing')
-	}
-  */
-
-	protected walk() {
-		console.log('Walking')
+	override render(): void {
+		console.log('rendering the circle shape')
 	}
 }
 
-class Student extends Person {
-	constructor(public studentId: number, firstName: string, lastName: string) {
-		super(firstName, lastName)
-	}
+/*
+* This doesn't mean anything at all. so to stop the rendering of the class shape we created it as an abstract class.
+let shape = new Shape('red')
+shape.render()
+*/
 
-	talking() {
-		this.walk()
-		console.log('Now Talking')
-	}
-}
-
-class Teacher extends Person {
-	override get fullName(): string {
-		return 'Prof. ' + super.fullName
-	}
-}
-
-class Principal extends Person {
-	override get fullName() {
-		return 'Principal ' + super.fullName
-	}
-}
-
-printName([
-	new Student(1, 'Mosh', 'li'),
-	new Teacher('Mosh', 'li'),
-	new Principal('Shubham', 'Anand'),
-])
-function printName(people: Person[]) {
-	for (let person of people) {
-		console.log(person.fullName)
-	}
-}
+let circle = new Circle(12, 'blue')
+circle.render()
