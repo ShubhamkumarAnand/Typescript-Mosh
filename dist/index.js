@@ -20,6 +20,7 @@ class Student extends Person {
         this.studentId = studentId;
     }
     talking() {
+        this.walk();
         console.log('Now Talking');
     }
 }

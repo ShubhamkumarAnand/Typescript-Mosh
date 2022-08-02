@@ -1,5 +1,5 @@
-// ^ OOPs - Polymorphism
-// * Open - Close Principal : Our Classes should be open for extension and close for modification
+// ^ Private vs Protected Methods
+// * Both are same but only to say -> Protected Methods are inherited
 
 class Person {
 	constructor(public firstName: string, public lastName: string) {}
@@ -8,7 +8,13 @@ class Person {
 		return this.firstName + ' ' + this.lastName
 	}
 
-	walk() {
+	/*
+  private sing() {
+		console.log('can sing')
+	}
+  */
+
+	protected walk() {
 		console.log('Walking')
 	}
 }
@@ -19,6 +25,7 @@ class Student extends Person {
 	}
 
 	talking() {
+		this.walk()
 		console.log('Now Talking')
 	}
 }
