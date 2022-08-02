@@ -28,4 +28,11 @@ class Student extends Person {
 let student = new Student(1, 'Shubham', 'Anand', 'imskanand@gmail.com');
 console.log(student.fullName);
 console.log(student.walk(), student.talking());
+class Teacher extends Person {
+    get fullName() {
+        return 'Prof. ' + super.fullName;
+    }
+}
+let teacher = new Teacher('Mosh', 'li', 'abc@agc.com');
+console.log(teacher.fullName);
 //# sourceMappingURL=index.js.map
