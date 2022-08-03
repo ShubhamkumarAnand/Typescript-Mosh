@@ -1,6 +1,10 @@
 // Generic Constraints -> Limiting the type of the value which can be accepted
 
-function echo<T extends { name: string }>(value: T): T {
+interface Person {
+	name: string
+}
+
+function echo<T extends Person>(value: T): T {
 	console.log(value)
 	return value
 }
