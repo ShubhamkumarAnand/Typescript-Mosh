@@ -1,14 +1,7 @@
 "use strict";
-class KeyValuePair {
-    key;
-    value;
-    constructor(key, value) {
-        this.key = key;
-        this.value = value;
-    }
+function wrapInArray(value) {
+    return [value];
 }
-let pair = new KeyValuePair(1, 'AAA');
-let pair1 = new KeyValuePair('a', 'AAB');
-console.log(pair.key.valueOf());
-console.log(pair1.key.valueOf());
+let numbers = wrapInArray('1');
+console.log(numbers);
 //# sourceMappingURL=index.js.map
