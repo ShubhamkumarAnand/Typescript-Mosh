@@ -1,9 +1,10 @@
 "use strict";
-class ArrayUtils {
-    static wrapInArray(value) {
-        return [value];
-    }
+function fetch(url) {
+    console.log(url);
+    return { data: null, error: null };
 }
-let numbers = ArrayUtils.wrapInArray('1');
-console.log(numbers);
+let user = fetch('www.example.com/users');
+console.log(user.data?.fullName);
+let product = fetch('www.example.com/products');
+console.log(product.data?.title);
 //# sourceMappingURL=index.js.map
