@@ -1,10 +1,8 @@
 "use strict";
-function fetch(url) {
-    console.log(url);
-    return { data: null, error: null };
+function echo(value) {
+    console.log(value);
+    return value;
 }
-let user = fetch('www.example.com/users');
-console.log(user.data?.fullName);
-let product = fetch('www.example.com/products');
-console.log(product.data?.title);
+console.log(echo('1'));
+console.log(echo(2));
 //# sourceMappingURL=index.js.map

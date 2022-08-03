@@ -1,28 +1,9 @@
-// Generics in Typescript -> Try to solve the common problem related to the types of attributes.
+// Generic Constraints
 
-// www.amazon.com/products
-// www.amazon.com/users
-
-interface Results<T> {
-	data: T | null
-	error: string | null
+function echo<T extends string | number>(value: T): T {
+	console.log(value)
+	return value
 }
 
-function fetch<T>(url: string): Results<T> {
-	console.log(url)
-	return { data: null, error: null }
-}
-
-interface User {
-	fullName: string
-}
-
-interface Product {
-	title: string
-}
-
-let user = fetch<User>('www.example.com/users')
-console.log(user.data?.fullName)
-
-let product = fetch<Product>('www.example.com/products')
-console.log(product.data?.title)
+console.log(echo('1'))
+console.log(echo(2))
