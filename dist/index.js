@@ -7,14 +7,8 @@ class KeyValuePair {
         this.value = value;
     }
 }
-let hash = new KeyValuePair(1, 'AA');
-class StringKeyValuePair {
-    key;
-    value;
-    constructor(key, value) {
-        this.key = key;
-        this.value = value;
-    }
-}
-let stringHash = new StringKeyValuePair('1', 'AAA');
+let pair = new KeyValuePair(1, 'AAA');
+let pair1 = new KeyValuePair('a', 'AAB');
+console.log(pair.key.valueOf());
+console.log(pair1.key.valueOf());
 //# sourceMappingURL=index.js.map
