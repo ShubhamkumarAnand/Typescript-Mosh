@@ -1,7 +1,10 @@
 "use strict";
-function wrapInArray(value) {
-    return [value];
+class ArrayUtils {
+    wrapInArray(value) {
+        return [value];
+    }
 }
-let numbers = wrapInArray('1');
+let utils = new ArrayUtils();
+let numbers = utils.wrapInArray('1');
 console.log(numbers);
 //# sourceMappingURL=index.js.map
