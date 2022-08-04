@@ -1,20 +1,13 @@
-// Extending Generic Class
+// Exercise
 
-interface Product {
-	name: string
-	price: number
+function echo<T>(value: T): T {
+	return value
 }
 
-// index signature
-// keyof
-type ReadOnly<T> = {
-	readonly [P in keyof T]: T[P]
+function printName<T extends { name: string }>(obj: T) {
+	console.log(obj.name)
 }
 
-type Optional<T> = {
-	[P in keyof T]?: T[P]
-}
-
-type Nullable<T> = {
-	[P in keyof T]: T[P] | null
+class Entity<T> {
+	constructor(public id: T) {}
 }
