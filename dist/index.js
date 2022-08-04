@@ -1,16 +1,14 @@
 "use strict";
-class Person {
-    name;
-    constructor(name) {
-        this.name = name;
+class Store {
+    _objects = [];
+    add(obj) {
+        this._objects.push(obj);
     }
 }
-class Customer extends Person {
+class CompressStore extends Store {
+    compress() { }
 }
-function echo(value) {
-    console.log(value);
-    return value;
-}
-console.log(echo(new Person('Mosh')));
-console.log(echo(new Customer('Mosh Pro')));
+let store = new CompressStore();
+store.add({ name: 'SmartWatch', price: 10 });
+store.compress();
 //# sourceMappingURL=index.js.map

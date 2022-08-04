@@ -1,16 +1,23 @@
-// Generic Constraints -> Limiting the type of the value which can be accepted
+// Extending Generic Classes
 
-class Person {
-	constructor(public name: string) {}
+interface Product {
+	name: string
+	price: number
 }
 
-class Customer extends Person {}
+class Store<T> {
+	private _objects: T[] = []
 
-function echo<T extends Person>(value: T): T {
-	console.log(value)
-	return value
+	add(obj: T) {
+		this._objects.push(obj)
+	}
 }
 
-console.log(echo(new Person('Mosh')))
-console.log(echo(new Customer('Mosh Pro')))
-// console.log(echo(2))
+// Extending the generic Class -> Passing on the generic type parameters
+class CompressStore<T> extends Store<T> {
+	compress() {}
+}
+
+let store = new CompressStore<Product>()
+store.add({ name: 'SmartWatch', price: 10 })
+store.compress()
