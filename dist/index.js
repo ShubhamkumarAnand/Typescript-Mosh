@@ -16,4 +16,10 @@ class SearchableStore extends Store {
         return this._objects.find((obj) => obj.name === name);
     }
 }
+class ProductStore extends Store {
+    filterByCategory(category) {
+        console.log(category);
+        return [];
+    }
+}
 //# sourceMappingURL=index.js.map

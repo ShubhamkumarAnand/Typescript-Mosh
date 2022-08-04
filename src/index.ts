@@ -28,3 +28,11 @@ class SearchableStore<T extends { name: string }> extends Store<T> {
 		return this._objects.find((obj) => obj.name === name)
 	}
 }
+
+// Fix the Generic type parameters
+class ProductStore extends Store<Product> {
+	filterByCategory(category: string): Product[] {
+		console.log(category)
+		return []
+	}
+}
