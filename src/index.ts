@@ -1,4 +1,4 @@
-// Extending Generic Classes
+// Extending Generic Class
 
 interface Product {
 	name: string
