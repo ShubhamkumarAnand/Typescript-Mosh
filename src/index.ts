@@ -6,7 +6,7 @@ interface Product {
 }
 
 class Store<T> {
-	private _objects: T[] = []
+	protected _objects: T[] = []
 
 	add(obj: T) {
 		this._objects.push(obj)
@@ -21,3 +21,10 @@ class CompressStore<T> extends Store<T> {
 let store = new CompressStore<Product>()
 store.add({ name: 'SmartWatch', price: 10 })
 store.compress()
+
+// Restricting the generic type parameters
+class SearchableStore<T extends { name: string }> extends Store<T> {
+	find(name: string): T | undefined {
+		return this._objects.find((obj) => obj.name === name)
+	}
+}

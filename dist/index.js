@@ -11,4 +11,9 @@ class CompressStore extends Store {
 let store = new CompressStore();
 store.add({ name: 'SmartWatch', price: 10 });
 store.compress();
+class SearchableStore extends Store {
+    find(name) {
+        return this._objects.find((obj) => obj.name === name);
+    }
+}
 //# sourceMappingURL=index.js.map
