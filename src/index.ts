@@ -11,28 +11,16 @@ class Store<T> {
 	add(obj: T) {
 		this._objects.push(obj)
 	}
-}
 
-// Extending the generic Class -> Passing on the generic type parameters
-class CompressStore<T> extends Store<T> {
-	compress() {}
-}
+	// T is a Product
+	// keyof T -> 'name', 'price'
 
-let store = new CompressStore<Product>()
-store.add({ name: 'SmartWatch', price: 10 })
-store.compress()
-
-// Restricting the generic type parameters
-class SearchableStore<T extends { name: string }> extends Store<T> {
-	find(name: string): T | undefined {
-		return this._objects.find((obj) => obj.name === name)
+	find(property: keyof T, value: unknown): T | undefined {
+		return this._objects.find((obj) => obj[property] === value)
 	}
 }
 
-// Fix the Generic type parameters
-class ProductStore extends Store<Product> {
-	filterByCategory(category: string): Product[] {
-		console.log(category)
-		return []
-	}
-}
+let store = new Store()
+store.add({ name: 'a', price: 100 })
+store.find('name', 'a')
+store.find('price', 1)
