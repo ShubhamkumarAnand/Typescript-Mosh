@@ -7,14 +7,14 @@ interface Product {
 
 // index signature
 // keyof
-type ReadOnlyProduct = {
-	readonly [P in keyof Product]: Product[P]
+type ReadOnly<T> = {
+	readonly [P in keyof T]: T[P]
 }
 
-let product: ReadOnlyProduct = {
-	name: 'a',
-	price: 12,
+type Optional<T> = {
+	[P in keyof T]?: T[P]
 }
 
-// Cannot be changed
-product.name = 'c'
+type Nullable<T> = {
+	[P in keyof T]: T[P] | null
+}
